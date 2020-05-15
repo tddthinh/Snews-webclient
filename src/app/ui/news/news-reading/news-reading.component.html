@@ -1,0 +1,21 @@
+<div class="container row border border-light mt-2">
+    <div class="col-sm-8 ">
+        <div class="container pt-2 pb-2">
+            <h3><b>{{topic.title}}</b></h3>
+            <div class="container-fluid p-0">
+                <h3 class="title">
+                    <span>{{topic.date}}</span>
+                </h3>
+            </div>
+            <hr>
+            <b>
+                <div [innerHTML]="topic.brief"></div>
+            </b>
+            <div [innerHTML]="topic.content"></div>
+        </div>
+    </div>
+    <div class="col-sm-4 may-hide mt-1">
+        <h5>Tin tuyển dụng <span class="badge badge-success">Good job</span></h5>
+        <app-recruitment></app-recruitment>
+    </div>
+</div>

@@ -1,0 +1,122 @@
+<div class="container-fluid p-0">
+  <h3 class="title">
+    <span>Người tham dự</span>
+  </h3>
+  <h2 class="title">
+    <span>{{event.name}}</span>
+  </h2>
+</div>
+<div class="container-fluid p-0">
+  <div class="bg-light">
+    <div class="row align-items-center p-2" style="width: 100%;">
+      <div class="col-md-3">
+        <div class="input-group pb-1">
+          <input class="form-control form-control-sm" type="search" placeholder="Tìm kiếm" [(ngModel)]="tempSearchString">
+          <span class="input-group-append">
+            <button class="btn btn-outline-secondary border-left-0 border btn-sm" type="button" (click)=search()>
+              <i class="fa fa-search"></i>
+            </button>
+          </span>
+        </div>
+      </div>
+      <div class="col-md-9">
+        <div class="text-center">
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="table-responsive">
+    <table class="table table-sm table-bordered table-hover">
+      <thead>
+        <tr>
+          <th>Mã số</th>
+          <th>Họ và tên</th>
+          <th>Email</th>
+          <th>Thông tin</th>
+          <th>Mã RFID</th>
+          <th>Điểm danh</th>
+          <th>Thao tác</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let row of rows">
+          <td>{{row.attendee.code}}</td>
+          <td>{{row.attendee.fullname}}</td>
+          <td>{{row.attendee.email}}</td>
+          <td>
+            <div class="pb-1">
+              <span *ngFor="let label of row.attendee.labels" class="badge badge-info ml-1">{{label.content}}</span>
+            </div>
+          </td>
+          <td class="text-center">{{row.attendee.rfid}}</td>
+          <td>
+            <span class="badge {{row.attendee.in ? 'badge-success' : 'badge-danger'}} ml-1">Vào</span>
+            <span class="badge {{row.attendee.out ? 'badge-success' : 'badge-danger'}} ml-1">Ra</span>
+          </td>
+          <td class="">
+            <div class="d-flex flex-row-reverse">
+              <div class="pl-1 btn-group btn-group-toggle">
+                <label class="btn btn-sm btn-outline-danger" ngbButtonLabel>
+                  <input type="checkbox" ngbButton [(ngModel)]="row.checked">Chọn
+                </label>
+              </div>
+              <div>
+                <app-modal-attendee [btnClass]="'btn btn-sm btn-outline-primary'" [att]="row.attendee" (added)="onAdded($event)">Sửa</app-modal-attendee>
+
+              </div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="d-flex justify-content-end p-2 bg-light" id="">
+    <div class="d-flex">
+      <div>
+        <div>
+        <app-modal-attendee [btnClass]="'btn btn-sm btn-outline-primary'" [att]="newAtt" [labels]="labels" (added)="onAdded($event)">Tạo
+            mới..</app-modal-attendee>
+        </div>
+      </div>
+      <div class="pl-1">
+        <ng-template #popTitle>Chắc chắn xóa?</ng-template>
+        <ng-template #popContent>
+          <div class="container-fluid pb-1" style="height: 35px;">
+            <button class="btn btn-sm btn-outline-danger float-right" type="button" (click)="remove()">
+              Đồng ý <i class="fa fa-remove"></i>
+            </button>
+          </div>
+        </ng-template>
+        <button class="btn btn-sm btn-outline-danger" type="button" [ngbPopover]="popContent" [popoverTitle]="popTitle">
+          Xóa <i class="fa fa-remove"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid d-flex justify-content-end bg-light">
+    <div class="d-inline-flex bg-light">
+      <div>
+        <div *ngIf="importMsg" class="alert alert-success mr-2">
+          Kết thúc: <strong>{{importMsg}}</strong>
+        </div>
+      </div>
+      <div class="container" style="width: 250px;">
+        <div class="input-group mb-3 input-group-sm float-right">
+          <input type="file" class="custom-file-input" accept=".xls,.xlsx" (change)="fileChange($event)">
+          <label class="custom-file-label" for="customFile">{{file ? file.name : 'Chọn tệp Excel'}}</label>
+        </div>
+      </div>
+      <div>
+        <button class="btn btn-outline-primary" type="button" (click)="_import()">
+          Nhập <i class="fa fa-upload"></i>
+        </button>
+      </div>
+
+    </div>
+  </div>
+  <div class="container-fluid bg-light">
+    <ngb-pagination [collectionSize]="collectionSize" [(page)]="page" [pageSize]="limit" [maxSize]="3" [rotate]="true"
+      [boundaryLinks]="true" (pageChange)="onPager($event)"></ngb-pagination>
+  </div>
+</div>

@@ -1,0 +1,29 @@
+<div class="container mt-1">
+  <div class="container-fluid p-0">
+    <h3 class="title">
+      <span>Bảng điểm danh</span>
+    </h3>
+  </div>
+  <div class="container-fluid p-2 border bg-light">
+    <button class="btn btn-sm btn-outline-danger" (click)=back()>Trở lại</button>
+  </div>
+  <div class="container-fluid p-0 border border-top-0">
+    <h3 class="text-center">Điểm danh <b class="text-danger">{{stateTitle}}</b></h3>
+    <h1 class="text-center"><b class="text-primary">{{event.name}}</b></h1>
+    <div class="text-center p-0">
+      <h5 style="display: inline;">Thời gian: <b>{{event.start_time}}</b> - <b>{{event.end_time}}</b></h5>
+      <h5 style="display: inline;"> - Địa điểm: <b>{{event.location}}</b></h5>
+      <h5>Thời gian điểm danh</h5>
+      <h3 class="text-danger">{{timer}} + {{timeOut}}</h3>
+    </div>
+    <div class="container-fluid p-0 bg-light border-top">
+      <div class="text-center p-2">
+        <input class="form-control form-control-sm w-50 mx-auto" placeholder="Mã RFID" [(ngModel)]="rfid" (change)=muster($event)>
+      </div>
+      <div *ngIf="att">
+        <h3 *ngIf="!att.error" class="text-center p-0"><span class="text-success">{{att.code}} - {{att.fullname}}<b class="text-primary"> ghi nhận.</b></span></h3>
+        <h3 class="text-danger text-center p-0">{{att.errorRfid}}</h3>
+      </div>
+    </div>
+  </div>
+</div>

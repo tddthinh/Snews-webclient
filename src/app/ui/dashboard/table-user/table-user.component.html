@@ -1,0 +1,87 @@
+<div class="container-fluid p-0">
+  <h3 class="title">
+    <span>Tài khoản</span>
+  </h3>
+</div>
+<div class="container-fluid p-0">
+  <div class="bg-light">
+    <div class="row align-items-center p-2" style="width: 100%;">
+      <div class="col-md-3">
+        <div class="input-group pb-1">
+          <input class="form-control form-control-sm" type="search" placeholder="Tìm kiếm">
+          <span class="input-group-append">
+            <button class="btn btn-outline-secondary border-left-0 border btn-sm" type="button">
+              <i class="fa fa-search"></i>
+            </button>
+
+          </span>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="d-flex align-items-center">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="table-responsive">
+    <table class="table table-sm table-hover">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Tên tài khoản</th>
+          <th>Họ và tên</th>
+          <th>Email</th>
+          <th>Chức vụ</th>
+          <th>Thao tác</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let row of rows">
+          <td>{{row.user.id}}</td>
+          <td><b>{{row.user.username}}</b></td>
+          <td>{{row.user.fullname}}</td>
+          <td>{{row.user.email}}</td>
+          <td><i>{{row.user.role.name}}</i></td>
+          <td>
+            <div class="d-flex">
+              <div>
+                <app-modal-user [btnClass]="'btn btn-sm btn-outline-primary'" [user]="row.user">Sửa</app-modal-user>
+              </div>
+              <div *ngIf="row.user.id !== me.id" class="pl-1 btn-group btn-group-toggle">
+                <label class="btn btn-sm btn-outline-danger" ngbButtonLabel>
+                  <input type="checkbox" ngbButton [(ngModel)]="row.checked"> Chọn
+                </label>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="d-flex justify-content-end p-2 bg-light" id="">
+    <div class="d-flex">
+      <div>
+        <div>
+          <app-modal-user [btnClass]="'btn btn-sm btn-outline-primary'" [user]="newUser" (added)="onAdded($event)">Tạo mới..</app-modal-user>
+        </div>
+      </div>
+      <div class="pl-1">
+        <ng-template #popTitle>Chắc chắn xóa các tài khoản này?</ng-template>
+        <ng-template #popContent>
+          <div class="container-fluid pb-1" style="height: 35px;">
+            <button class="btn btn-sm btn-outline-danger float-right" type="button" (click)="remove()">
+              Đồng ý <i class="fa fa-remove"></i>
+            </button>
+          </div>
+        </ng-template>
+        <button class="btn btn-sm btn-outline-danger" type="button" [ngbPopover]="popContent" [popoverTitle]="popTitle">
+          Xóa <i class="fa fa-remove"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid bg-light">
+    <ngb-pagination [collectionSize]="collectionSize" [(page)]="page" [pageSize]="limit" [maxSize]="3" [rotate]="true"
+      [boundaryLinks]="true" (pageChange)="onPager($event)"></ngb-pagination>
+  </div>
+</div>

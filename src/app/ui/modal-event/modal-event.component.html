@@ -1,0 +1,51 @@
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h5 class="modal-title text-primary" id="modal-basic-title">Sự kiện</h5>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+
+    <div>
+      <label class="text-primary">Tên sự kiện</label>
+      <input type="text" minlength="1" class="form-control form-control-sm" [(ngModel)]="tempEvent.name">
+      <label *ngIf="tempEvent.errorName" class="text-danger">{{tempEvent.errorName}}</label>
+    </div>
+    <div>
+        <label class="text-primary">Địa điểm</label>
+        <input type="text" minlength="1" class="form-control form-control-sm" [(ngModel)]="tempEvent.location">
+      </div>
+    <div>
+      <label class="text-primary">Ngày thực hiện</label>
+      <input type="date" class="form-control form-control-sm" [(ngModel)]="tempEvent.date">
+      <label *ngIf="tempEvent.errorDate"  class="text-danger">{{tempEvent.errorDate}}</label>
+    </div>
+    <div>
+      <label class="text-primary">Giờ điểm danh vào</label>
+      <input type="time" class="form-control form-control-sm" [(ngModel)]="tempEvent.start_time">
+    </div>
+    <div>
+      <label class="text-primary">Giờ điểm danh ra</label>
+      <input type="time" class="form-control form-control-sm" [(ngModel)]="tempEvent.end_time">
+      <label *ngIf="tempEvent.errorTime" class="text-danger">{{tempEvent.errorTime}}</label>
+    </div>
+    <div>
+      <label class="text-primary">Thời gian điểm danh (phút)</label>
+      <input min="0" max="30" type="number" class="form-control form-control-sm" [(ngModel)]="tempEvent.timeout">
+    </div>
+    <ng-container *ngIf="tempEvent.id;then editButton;else newButton"></ng-container>
+    <ng-template #editButton>
+      <button type="button" class="btn btn-primary float-right mt-2" (click)="post('edit')">Chỉnh sửa</button>
+    </ng-template>
+    <ng-template #newButton>
+      <button type="button" class="btn btn-primary float-right mt-2" (click)="post('new')">Tạo mới</button>
+    </ng-template>
+  </div>
+  <div class="modal-footer">
+    <h5 class="{{stateColor}}">{{stateText}}</h5>
+  </div>
+</ng-template>
+<button class="{{btnClass}}" (click)="open(content)">
+  <ng-content></ng-content>
+</button>

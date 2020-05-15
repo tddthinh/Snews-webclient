@@ -1,0 +1,63 @@
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h5 class="modal-title text-primary" id="modal-basic-title">Tài khoản</h5>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <ng-container *ngIf="tempUser.id;then editInput;else newInput"></ng-container>
+    <ng-template #editInput>
+      <div>
+        <label class="text-primary">Tên tài khoản</label>
+        <input type="text" class="form-control form-control-sm" value="{{tempUser.username}}" disabled>
+        <label *ngIf="tempUser.errorUsername" class="text-danger">{{tempUser.errorUsername}}</label>
+      </div>
+    </ng-template>
+    <ng-template #newInput>
+      <div>
+        <label class="text-primary">Tên tài khoản</label>
+        <input type="text" class="form-control form-control-sm" [(ngModel)]="tempUser.username">
+        <label *ngIf="tempUser.errorUsername" class="text-danger">{{tempUser.errorUsername}}</label>
+      </div>
+    </ng-template>
+
+    <div>
+      <label class="text-primary">Mật khẩu</label>
+      <input type="password" class="form-control form-control-sm" [(ngModel)]="tempUser.password">
+      <label *ngIf="tempUser.errorPassword" class="text-danger">{{tempUser.errorPassword}}</label>
+    </div>
+    <div>
+      <label class="text-primary">Họ và tên</label>
+      <input type="text" class="form-control form-control-sm" [(ngModel)]="tempUser.fullname">
+      <label *ngIf="tempUser.errorFullname" class="text-danger">{{tempUser.errorFullname}}</label>
+    </div>
+    <div>
+      <label class="text-primary">Email</label>
+      <input type="text" class="form-control form-control-sm" [(ngModel)]="tempUser.email">
+      <label *ngIf="tempUser.errorEmail" class="text-danger">{{tempUser.errorEmail}}</label>
+    </div>
+    <div>
+      <label class="text-primary">Chức vụ </label>
+      <br>
+      <select [(ngModel)]="tempUser.role" class="custom-select-sm w-100">
+        <option *ngFor="let role of roles" [ngValue]="role">{{role.name}}</option>
+      </select>
+    </div>
+    <ng-container *ngIf="tempUser.id;then editButton;else newButton"></ng-container>
+    <ng-template #editButton>
+      <button type="button" class="btn btn-primary float-right mt-2" (click)="post('edit')">Chỉnh sửa</button>
+    </ng-template>
+    <ng-template #newButton>
+      <button type="button" class="btn btn-primary float-right mt-2" (click)="post('new')">Tạo mới</button>
+    </ng-template>
+
+
+  </div>
+  <div class="modal-footer">
+    <h5 class="{{stateColor}}">{{stateText}}</h5>
+  </div>
+</ng-template>
+<button class="{{btnClass}}" (click)="open(content)">
+  <ng-content></ng-content>
+</button>

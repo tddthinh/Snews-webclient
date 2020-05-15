@@ -1,0 +1,258 @@
+{
+	"left-top-topic" : {
+						"id": 1000,
+						"title": "Vì sao hỏi những câu dốt nát lại là việc thông minh nhất bạn nên làm",
+						"date":"27/08/2018",
+						"author": "Administrator",
+						"brief": "To provide another perspective to the problem (as inferred from the title/contents of the original post): For Opera there is Dragonfly"
+					}
+		,
+	"right-top-topic" : {
+						"id": 1001, 
+            "title": "Nokia, BlackBerry, Palm, Microsoft: Đồng loạt chê bai thậm tệ khi iPhone ra mắt để rồi đều chỉ còn là chiếc bóng của chính mình khi Apple đạt giá trị 1.000 tỷ USD",
+            "date":"27/08/2018",
+            "author": "Administrator" ,
+			"brief": "To provide another perspective to the problem (as inferred from the title/contents of the original post): For Opera there is Dragonfly"
+					}
+		,
+    "topics": [
+        { 
+            "id": 1000, 
+            "title": "Vì sao hỏi những câu dốt nát lại là việc thông minh nhất bạn nên làm",
+            "link":"file:///D:/Users/THINH/Documents/Mon%20Hoc/LuanVan/topics/1000.html",
+            "date":"27/08/2018",
+            "author": "Administrator",
+			"brief": "To provide another perspective to the problem (as inferred from the title/contents of the original post): For Opera there is Dragonfly"
+        },
+        { 
+            "id": 1001, 
+            "title": "Nokia, BlackBerry, Palm, Microsoft: Đồng loạt chê bai thậm tệ khi iPhone ra mắt để rồi đều chỉ còn là chiếc bóng của chính mình khi Apple đạt giá trị 1.000 tỷ USD",
+            "link":"file:///D:/Users/THINH/Documents/Mon%20Hoc/LuanVan/topics/1001.html",
+            "date":"27/08/2018",
+            "author": "Administrator" ,
+			"brief": "To provide another perspective to the problem (as inferred from the title/contents of the original post): For Opera there is Dragonfly"
+        },
+        { 
+            "id": 1002,
+            "title": "Giờ là thời khắc tuyệt vời để Apple mua lại Tesla và đá Elon Musk ra khỏi băng ghế lái?",
+            "link":"file:///D:/Users/THINH/Documents/Mon%20Hoc/LuanVan/topics/1002.html",
+            "date":"28/08/2018",
+            "author": "Admin" ,
+			"brief": "To provide another perspective to the problem (as inferred from the title/contents of the original post): For Opera there is Dragonfly"
+        },
+        { 
+            "id": 1003, 
+            "title": "Honor 8X Max lộ diện với màn hình khổng lồ 7,12 inch, thiết kế giọt nước, giá bán 1.465 USD",
+            "link":"file:///D:/Users/THINH/Documents/Mon%20Hoc/LuanVan/topics/1003.html",
+            "date":"28/08/2018",
+            "author": "Admin" ,
+			"brief": "To provide another perspective to the problem (as inferred from the title/contents of the original post): For Opera there is Dragonfly"
+        },
+        { 
+            "id": 1004,
+            "title": "Ai là người hưởng lợi nhất trong cuộc đua 'khô máu' trên thị trường thương mại điện tử tỷ đô tại Việt Nam?",
+            "link":"file:///D:/Users/THINH/Documents/Mon%20Hoc/LuanVan/topics/1004.html",
+            "date":"29/08/2018",
+            "author": "Administrator" ,
+			"brief": "To provide another perspective to the problem (as inferred from the title/contents of the original post): For Opera there is Dragonfly"
+        },
+        { 
+            "id": 1005, 
+            "title": "Vì sao hỏi những câu dốt nát lại là việc thông minh nhất bạn nên làm",
+            "link":"file:///D:/Users/THINH/Documents/Mon%20Hoc/LuanVan/topics/1005.html",
+            "date":"27/08/2018",
+            "author": "Administrator" ,
+			"brief": "To provide another perspective to the problem (as inferred from the title/contents of the original post): For Opera there is Dragonfly"
+        },
+        { 
+            "id": 1006, 
+            "title": "Nokia, BlackBerry, Palm, Microsoft: Đồng loạt chê bai thậm tệ khi iPhone ra mắt để rồi đều chỉ còn là chiếc bóng của chính mình khi Apple đạt giá trị 1.000 tỷ USD",
+            "link":"file:///D:/Users/THINH/Documents/Mon%20Hoc/LuanVan/topics/1006.html",
+            "date":"27/08/2018",
+            "author": "Administrator" ,
+			"brief": "To provide another perspective to the problem (as inferred from the title/contents of the original post): For Opera there is Dragonfly"
+        },
+        { 
+            "id": 1007, 
+            "title": "Honor 8X Max lộ diện với màn hình khổng lồ 7,12 inch, thiết kế giọt nước, giá bán 1.465 USD",
+            "link":"file:///D:/Users/THINH/Documents/Mon%20Hoc/LuanVan/topics/1007.html",
+            "date":"28/08/2018",
+            "author": "Admin" ,
+			"brief": "To provide another perspective to the problem (as inferred from the title/contents of the original post): For Opera there is Dragonfly"
+        },
+        { 
+            "id": 1008,
+            "title": "Ai là người hưởng lợi nhất trong cuộc đua 'khô máu' trên thị trường thương mại điện tử tỷ đô tại Việt Nam?",
+            "link":"file:///D:/Users/THINH/Documents/Mon%20Hoc/LuanVan/topics/1008.html",
+            "date":"29/08/2018",
+            "author": "Administrator" ,
+			"brief": "To provide another perspective to the problem (as inferred from the title/contents of the original post): For Opera there is Dragonfly"
+        },
+        { 
+            "id": 1009, 
+            "title": "Vì sao hỏi những câu dốt nát lại là việc thông minh nhất bạn nên làm",
+            "link":"file:///D:/Users/THINH/Documents/Mon%20Hoc/LuanVan/topics/1000.html",
+            "date":"27/08/2018",
+            "author": "Administrator" ,
+			"brief": "To provide another perspective to the problem (as inferred from the title/contents of the original post): For Opera there is Dragonfly"
+        },
+        { 
+            "id": 1010, 
+            "title": "Nokia, BlackBerry, Palm, Microsoft: Đồng loạt chê bai thậm tệ khi iPhone ra mắt để rồi đều chỉ còn là chiếc bóng của chính mình khi Apple đạt giá trị 1.000 tỷ USD",
+            "link":"file:///D:/Users/THINH/Documents/Mon%20Hoc/LuanVan/topics/1001.html",
+            "date":"27/08/2018",
+            "author": "Administrator" ,
+			"brief": "To provide another perspective to the problem (as inferred from the title/contents of the original post): For Opera there is Dragonfly"
+        },
+        { 
+            "id": 1011,
+            "title": "Giờ là thời khắc tuyệt vời để Apple mua lại Tesla và đá Elon Musk ra khỏi băng ghế lái?",
+            "link":"file:///D:/Users/THINH/Documents/Mon%20Hoc/LuanVan/topics/1002.html",
+            "date":"28/08/2018",
+            "author": "Admin" ,
+			"brief": "To provide another perspective to the problem (as inferred from the title/contents of the original post): For Opera there is Dragonfly"
+        },
+        { 
+            "id": 1012, 
+            "title": "Honor 8X Max lộ diện với màn hình khổng lồ 7,12 inch, thiết kế giọt nước, giá bán 1.465 USD",
+            "link":"file:///D:/Users/THINH/Documents/Mon%20Hoc/LuanVan/topics/1003.html",
+            "date":"28/08/2018",
+            "author": "Admin" ,
+			"brief": "To provide another perspective to the problem (as inferred from the title/contents of the original post): For Opera there is Dragonfly"
+        },
+        { 
+            "id": 1013,
+            "title": "Ai là người hưởng lợi nhất trong cuộc đua 'khô máu' trên thị trường thương mại điện tử tỷ đô tại Việt Nam?",
+            "link":"file:///D:/Users/THINH/Documents/Mon%20Hoc/LuanVan/topics/1004.html",
+            "date":"29/08/2018",
+            "author": "Administrator" ,
+			"brief": "To provide another perspective to the problem (as inferred from the title/contents of the original post): For Opera there is Dragonfly"
+        },               
+        { 
+            "id": 1014,
+            "title": "Giờ là thời khắc tuyệt vời để Apple mua lại Tesla và đá Elon Musk ra khỏi băng ghế lái?",
+            "link":"file:///D:/Users/THINH/Documents/Mon%20Hoc/LuanVan/topics/1006.html",
+            "date":"28/08/2018",
+            "author": "Admin" ,
+			"brief": "To provide another perspective to the problem (as inferred from the title/contents of the original post): For Opera there is Dragonfly"
+        }, 
+        { 
+            "id": 1015,
+            "title": "Giờ là thời khắc tuyệt vời để Apple mua lại Tesla và đá Elon Musk ra khỏi băng ghế lái?",
+            "link":"file:///D:/Users/THINH/Documents/Mon%20Hoc/LuanVan/topics/1006.html",
+            "date":"28/08/2018",
+            "author": "Admin" ,
+			"brief": "To provide another perspective to the problem (as inferred from the title/contents of the original post): For Opera there is Dragonfly"
+        },
+        { 
+            "id": 1016, 
+            "title": "Vì sao hỏi những câu dốt nát lại là việc thông minh nhất bạn nên làm",
+            "link":"file:///D:/Users/THINH/Documents/Mon%20Hoc/LuanVan/topics/1000.html",
+            "date":"27/08/2018",
+            "author": "Administrator" ,
+			"brief": "To provide another perspective to the problem (as inferred from the title/contents of the original post): For Opera there is Dragonfly"
+        },
+        { 
+            "id": 1017, 
+            "title": "Nokia, BlackBerry, Palm, Microsoft: Đồng loạt chê bai thậm tệ khi iPhone ra mắt để rồi đều chỉ còn là chiếc bóng của chính mình khi Apple đạt giá trị 1.000 tỷ USD",
+            "link":"file:///D:/Users/THINH/Documents/Mon%20Hoc/LuanVan/topics/1001.html",
+            "date":"27/08/2018",
+            "author": "Administrator" ,
+			"brief": "To provide another perspective to the problem (as inferred from the title/contents of the original post): For Opera there is Dragonfly"
+        },
+        { 
+            "id": 1018,
+            "title": "Giờ là thời khắc tuyệt vời để Apple mua lại Tesla và đá Elon Musk ra khỏi băng ghế lái?",
+            "link":"file:///D:/Users/THINH/Documents/Mon%20Hoc/LuanVan/topics/1002.html",
+            "date":"28/08/2018",
+            "author": "Admin" ,
+			"brief": "To provide another perspective to the problem (as inferred from the title/contents of the original post): For Opera there is Dragonfly"
+        },
+        { 
+            "id": 1019, 
+            "title": "Honor 8X Max lộ diện với màn hình khổng lồ 7,12 inch, thiết kế giọt nước, giá bán 1.465 USD",
+            "link":"file:///D:/Users/THINH/Documents/Mon%20Hoc/LuanVan/topics/1003.html",
+            "date":"28/08/2018",
+            "author": "Admin" ,
+			"brief": "To provide another perspective to the problem (as inferred from the title/contents of the original post): For Opera there is Dragonfly"
+        }
+    ],
+    "users": [
+        { 
+            "id": 100,
+            "username": "Administrator",
+            "password_md5":"21232f297a57a5a743894a0e4a801fc3",
+            "fullname":"Trần Đình Đức Thịnh",
+            "level": "0",
+            "levelname": "Quản trị viên"
+        },
+        { 
+            "id": 101,
+            "username": "Admin",
+            "password_md5":"21232f297a57a5a743894a0e4a801fc3",
+            "fullname":"Trần Đình Đức Thịnh",
+            "level": "1",
+            "levelname": "Quản lý viên"
+        },
+        { 
+            "id": 102,
+            "username": "User01",
+            "password_md5":"21232f297a57a5a743894a0e4a801fc3",
+            "fullname":"Trần Đình Đức Thịnh",
+            "levelname": "Thành viên"
+        },
+        { 
+            "id": 103,
+            "username": "User02",
+            "password_md5":"21232f297a57a5a743894a0e4a801fc3",
+            "fullname":"Trần Đình Đức Thịnh",
+            "levelname": "Thành viên"
+        },
+        { 
+            "id": 104,
+            "username": "User03",
+            "password_md5":"21232f297a57a5a743894a0e4a801fc3",
+            "fullname":"Trần Đình Đức Thịnh",
+            "levelname": "Thành viên"
+        },
+        { 
+            "id": 105,
+            "username": "User04",
+            "password_md5":"21232f297a57a5a743894a0e4a801fc3",
+            "fullname":"Trần Đình Đức Thịnh",
+            "levelname": "Thành viên"
+        },
+        { 
+            "id": 106,
+            "username": "User05",
+            "password_md5":"21232f297a57a5a743894a0e4a801fc3",
+            "fullname":"Trần Đình Đức Thịnh",
+            "levelname": "Thành viên"
+        },
+        { 
+            "id": 107,
+            "username": "User06",
+            "password_md5":"21232f297a57a5a743894a0e4a801fc3",
+            "fullname":"Trần Đình Đức Thịnh",
+            "levelname": "Thành viên"
+        },
+        { 
+            "id": 108,
+            "username": "User07",
+            "password_md5":"21232f297a57a5a743894a0e4a801fc3",
+            "fullname":"Trần Đình Đức Thịnh",
+            "levelname": "Thành viên"
+        }
+    ],
+	"banners" : [
+		{"id" : "middle", "redirect" : "https://google.com"},
+		{"id" : "top", "redirect" : "https://google.com"}
+		
+	],
+	"pagination" : [
+		{"id" : "topic", "number" : 20},
+		{"id" : "user", "number" : 9},
+		{"id" : "event", "number" : 9}
+		
+	]
+}

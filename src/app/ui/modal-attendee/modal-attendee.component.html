@@ -1,0 +1,73 @@
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h5 class="modal-title" id="modal-basic-title">Nhập tài khoản</h5>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <div>
+      <label class="text-primary">Mã số</label>
+      <input [(ngModel)]="tempAtt.code" class="form-control form-control-sm" placeholder="Mã số">
+      <div>
+        <span *ngIf="tempAtt.errorCode" class="text-danger">{{tempAtt.errorCode}}</span>
+      </div>
+    </div>
+    <div>
+      <label class="text-primary">Họ và tên</label>
+      <input [(ngModel)]="tempAtt.fullname" class="form-control form-control-sm" placeholder="Họ và tên">
+      <div>
+        <span *ngIf="tempAtt.errorFullname" class="text-danger">{{tempAtt.errorFullname}}</span>
+      </div>
+    </div>
+    <div>
+      <label class="text-primary">Email</label>
+      <input [(ngModel)]="tempAtt.email" class="form-control form-control-sm" placeholder="Địa chỉ email">
+      <div>
+        <span *ngIf="tempAtt.errorEmail" class="text-danger">{{tempAtt.errorEmail}}</span>
+      </div>
+    </div>
+    <div>
+      <label class="text-primary">Thông tin</label>
+      <div class="container-fluid p-0">
+        <div class="input-group pb-1">
+          <ng-template #rt let-r="result" let-t="term">
+            <ngb-highlight [result]="r.content" [term]="t"></ngb-highlight>
+          </ng-template>
+          <input id="typeahead-basic" type="text" class="form-control form-control-sm" [(ngModel)]="model"
+            [inputFormatter]="formatter" [ngbTypeahead]="search" [resultTemplate]="rt" (change)=addLabel() placeholder="Tên nhãn" />
+          <span class="input-group-append">
+            <button class="btn btn-outline-primary border-left-0 border btn-sm" type="button" (click)=addLabel()>
+              <i class="fa fa-plus"></i>
+            </button>
+          </span>
+        </div>
+        <div class="p-0">
+          <span *ngFor="let label of tempAtt.labels" class="badge badge-info ml-1">{{label.content}} <i class="fa fa-remove bg-danger rm-label"
+              (click)=removeLabel(label)></i></span>
+        </div>
+      </div>
+    </div>
+    <div>
+      <label class="text-primary">Mã RFID</label>
+      <input [(ngModel)]="tempAtt.rfid" class="form-control form-control-sm" placeholder="Mã thẻ RFID">
+      <div>
+        <span *ngIf="tempAtt.errorRfid" class="text-danger">{{tempAtt.errorRfid}}</span>
+      </div>
+    </div>
+
+    <ng-container *ngIf="tempAtt.id;then editButton;else newButton"></ng-container>
+    <ng-template #editButton>
+      <button type="button" class="btn btn-primary float-right mt-2" (click)="post('edit')">Chỉnh sửa</button>
+    </ng-template>
+    <ng-template #newButton>
+      <button type="button" class="btn btn-primary float-right mt-2" (click)="post('new')">Tạo mới</button>
+    </ng-template>
+  </div>
+  <div class="modal-footer">
+    <h3 class="{{stateColor}}">{{stateText}}</h3>
+  </div>
+</ng-template>
+<button class="{{btnClass}}" (click)="open(content)">
+  <ng-content></ng-content>
+</button>

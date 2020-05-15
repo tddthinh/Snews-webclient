@@ -1,0 +1,28 @@
+<div class="container mt-1">
+  <ngb-tabset [justify]="currentJustify">
+    <ngb-tab>
+      <ng-template ngbTabTitle>
+        <h5><b>Bài viết <i class="fa fa-edit"></i></b></h5>
+      </ng-template>
+      <ng-template ngbTabContent>
+        <app-table-topic></app-table-topic>
+      </ng-template>
+    </ngb-tab>
+    <ngb-tab>
+      <ng-template ngbTabTitle>
+        <h5><b>Tuyển dụng <i class="fa fa-handshake-o"></i></b></h5>
+      </ng-template>
+      <ng-template ngbTabContent>
+        <app-table-recruitment></app-table-recruitment>
+      </ng-template>
+    </ngb-tab>
+    <ngb-tab>
+      <ng-template ngbTabTitle>
+        <h5><b>Tài khoản <i class="fa fa-user"></i></b></h5>
+      </ng-template>
+      <ng-template ngbTabContent>
+        <app-table-user></app-table-user>
+      </ng-template>
+    </ngb-tab>
+  </ngb-tabset>
+</div>

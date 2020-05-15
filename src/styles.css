@@ -1,0 +1,58 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+@import "~font-awesome/css/font-awesome.css";
+@import "~froala-editor/css/froala_editor.pkgd.min.css";
+@import "~froala-editor/css/froala_style.min.css";
+a{
+    text-decoration: none !important;
+}
+.title{
+    position: relative;
+    padding: 0;
+    height: 30px;
+    margin: 0;
+    background: #333;
+    overflow: hidden;
+}
+.title span{
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 17px;
+    color: #fff;
+    padding: 5px 10px;
+    text-transform: uppercase;
+    background: #e03d3d;
+    clear: both;
+    height: 100%;
+}
+.title span::before{
+    left: 100%;
+    top: 0;
+    height: 0;
+    width: 27px;
+    position: absolute;
+    content: " ";
+    pointer-events: none;
+    margin-left: 0;
+    margin-top: 0;
+    border-bottom: 30px solid #fff;
+    border-right: 20px solid transparent;
+}
+.title span::after{
+    left: 100%;
+    top: 0;
+    height: 0;
+    width: 0;
+    position: absolute;
+    content: " ";
+    pointer-events: none;
+    margin-left: 0;
+    margin-top: 0;
+    border-bottom: 30px solid #e03d3d;
+    border-right: 20px solid transparent;
+}
+
+.rm-label:hover{
+    cursor: pointer;
+}

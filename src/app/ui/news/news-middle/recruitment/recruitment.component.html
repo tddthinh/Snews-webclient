@@ -1,0 +1,55 @@
+<div class="container-fluid p-0">
+  <div class="row mt-3"></div>
+  <div class="row row-news pt-1" *ngFor="let r of recruitments">
+    <div class="container d-flex">
+      <button type="button" class="btn btn-outline-success flex-fill" placement="left" [ngbPopover]="popContent" [popoverTitle]="popTitle">
+        <h5 class="font-weight-bold text-dark">{{r.company}}</h5>
+        <span>Ngày đăng: <b class="text-danger">{{r.date | date: 'dd/MM/yyyy'}}</b> - Lĩnh vực: <b class="text-dark">{{r.field}}</b></span>
+      </button>
+      <ng-template #popContent>Thông tin <b>{{r.company}}</b></ng-template>
+      <ng-template #popTitle>
+        <p>Ngày đăng <b class="text-danger">{{r.date | date: 'dd/MM/yyyy'}}</b></p>
+        <div>
+          <table class="table-striped">
+            <tr>
+              <td class="pr-1 font-weight-bold">Lĩnh vực</td>
+              <td>{{r.field}}</td>
+            </tr>
+            <tr>
+              <td class="pr-1 font-weight-bold">Vị trí</td>
+              <td>{{r.vacancy}}</td>
+            </tr>
+            <tr>
+              <td class="pr-1 font-weight-bold">Kỹ năng</td>
+              <td>{{r.skill}}</td>
+            </tr>
+            <tr>
+              <td class="pr-1 font-weight-bold">Số lượng</td>
+              <td>{{r.quanity}}</td>
+            </tr>
+            <tr>
+              <td class="pr-1 font-weight-bold">Người tuyển</td>
+              <td>{{r.recruiter}}</td>
+            </tr>
+            <tr>
+              <td class="pr-1 font-weight-bold">Liên hệ</td>
+              <td>{{r.phone}}</td>
+            </tr>
+            <tr>
+              <td class="pr-1 font-weight-bold">Email</td>
+              <td>{{r.mail}}</td>
+            </tr>
+            <tr>
+              <td class="pr-1 font-weight-bold">Chi tiết</td>
+              <td><a href="{{r.file}}">Tải về</a></td>
+            </tr>
+          </table>
+        </div>
+      </ng-template>
+    </div>
+  </div>
+  <div class="p-2">
+    <ngb-pagination [collectionSize]="collectionSize" [(page)]="page" [pageSize]="limit" [maxSize]="3" [rotate]="true"
+      [boundaryLinks]="true" (pageChange)="onPager($event)"></ngb-pagination>
+  </div>
+</div>

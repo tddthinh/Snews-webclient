@@ -1,0 +1,33 @@
+<div class="container news-top">
+  <div class="row">
+    <div class="col-sm-8">
+      <div class="row mt-1"></div>
+      <div class="row row-news pt-1" *ngFor="let topic of topics">
+        <div class="col-sm-4 p-0" style="height: 155px;">
+          <a routerLink="/reading/{{topic.id}}" class="">
+            <img class="img-fluid" src="{{topic.image}}">
+          </a>
+        </div>
+        <div class="col-sm-8">
+          <a routerLink="/reading/{{topic.id}}">
+            <h5 class="text-dark font-weight-bold">{{topic.title}}</h5>
+          </a>
+          <span class="text-secondary fa fa-calendar"> {{topic.date}} | {{topic.author}}</span>
+          <p class="text-secondary mt-1 may-hide">
+            {{topic.brief}}
+          </p>
+        </div>
+      </div>
+      <div class="p-2">
+        <ngb-pagination [collectionSize]="collectionSize" [(page)]="page" [pageSize]="limit" [maxSize]="3" [rotate]="true" [boundaryLinks]="true"
+          (pageChange)="onPager($event)"></ngb-pagination>
+      </div>
+    </div>
+
+
+    <div class="col-sm-4 may-hide mt-1">
+      <h5>Tin tuyển dụng <span class="badge badge-success">Good job</span></h5>
+      <app-recruitment></app-recruitment>
+    </div>
+  </div>
+</div>

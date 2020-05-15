@@ -1,0 +1,10 @@
+.active.nav-item {
+    border-bottom: 2px solid #007bff;
+}
+.nav-link{
+    font-size: 18px;
+}
+.active .nav-link{
+    font-size: 18px;
+    font-weight: 700
+}

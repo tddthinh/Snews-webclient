@@ -1,0 +1,130 @@
+<ng-container *ngIf="!musterMode;then eventComp;else musterComp"></ng-container>
+<ng-template #eventComp>
+  <div class="container-fluid shadow-sm p-0 mt-1">
+    <div class="container-fluid p-0">
+      <h3 class="title">
+        <span>Sự kiện</span>
+      </h3>
+    </div>
+    <div class="container-fluid p-0">
+      <div class="bg-light">
+        <div class="row align-items-center p-2" style="width: 100%;">
+          <div class="col-md-3">
+            <div class="input-group pb-1">
+              <input class="form-control form-control-sm" type="search" placeholder="Tìm kiếm">
+              <span class="input-group-append">
+                <button class="btn btn-outline-secondary border-left-0 border btn-sm" type="button">
+                  <i class="fa fa-search"></i>
+                </button>
+
+              </span>
+            </div>
+          </div>
+          <div class="col-md-9">
+            <div class="d-flex float-right">
+              <button class="btn btn-outline-primary btn-sm" type="button" (click)=onRefresh() [disabled]=isRefreshing>
+                Làm mới <i class="fa fa-retweet"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="table-responsive">
+        <table class="table table-sm table-bordered table-hover">
+          <thead>
+            <tr>
+              <th></th>
+              <th>Tên sự kiện</th>
+              <th>Ngày thực hiện</th>
+              <th>Địa điểm</th>
+              <th>Giờ điểm danh vào</th>
+              <th>Giờ điểm danh ra</th>
+              <th>Số lượng đăng ký</th>
+              <th>Thao tác</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let row of rows">
+              <td>
+                <div class="d-flex">
+                  <ng-container *ngIf="isRefreshing;then Refr;else noRefr"></ng-container>
+                  <ng-template #Refr>
+                    <button class="btn btn-sm btn-secondary" disabled>Đang tải..</button>
+                  </ng-template>
+                  <ng-template #noRefr>
+                    <button *ngIf="!row.ended" class="btn btn-sm btn-success" [disabled]=!row.started (click)=goMuster(row.event)>Điểm
+                      danh</button>
+                    <button *ngIf="row.ended" class="btn btn-sm btn-primary" (click)=show(statistics,row.event)>Thống kê</button>
+                  </ng-template>
+                </div>
+              </td>
+              <td>{{row.event.name}}</td>
+              <td class="text-center">{{row.event.date | date : "dd/MM/yyyy"}}</td>
+              <td>{{row.event.location}}</td>
+              <td class="text-center">{{row.event.start_time}}</td>
+              <td class="text-center">{{row.event.end_time}} + {{row.event.timeout}} phút</td>
+              <td class="text-center">
+
+                <b><span class="badge {{row.event.attendees_count === 0 ? 'badge-danger' : 'badge-success'}}">{{row.event.attendees_count}}</span>
+                  Người</b>
+                <button class="btn btn-sm btn-outline-primary float-right" (click)="show(updateAttendees,row.event)">
+                  Cập nhật <i class="fa fa-user-plus"></i>
+                </button>
+              </td>
+
+              <td class="">
+                <div class="d-flex flex-row-reverse">
+
+                  <div class="pl-1 btn-group btn-group-toggle">
+                    <label class="btn btn-sm btn-outline-danger" ngbButtonLabel>
+                      <input type="checkbox" ngbButton [(ngModel)]="row.checked"> Chọn
+                    </label>
+                  </div>
+                  <div>
+                    <app-modal-event [btnClass]="'btn btn-sm btn-outline-primary'" [event]="row.event">Sửa</app-modal-event>
+                  </div>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="d-flex justify-content-end p-2 bg-light" id="">
+        <div class="d-flex">
+          <div>
+            <div>
+              <app-modal-event [btnClass]="'btn btn-sm btn-outline-primary'" [event]="newEvent" (added)="onAdded($event)">Tạo
+                mới..</app-modal-event>
+            </div>
+          </div>
+          <div class="pl-1">
+            <ng-template #popTitle>Chắc chắn xóa các sự kiện này?</ng-template>
+            <ng-template #popContent>
+              <div class="container-fluid pb-1" style="height: 35px;">
+                <button class="btn btn-sm btn-outline-danger float-right" type="button" (click)="remove()">
+                  Đồng ý <i class="fa fa-remove"></i>
+                </button>
+              </div>
+            </ng-template>
+            <button class="btn btn-sm btn-outline-danger" type="button" [ngbPopover]="popContent" [popoverTitle]="popTitle">
+              Xóa <i class="fa fa-remove"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="container-fluid bg-light">
+        <ngb-pagination [collectionSize]="collectionSize" [(page)]="page" [pageSize]="limit" [maxSize]="3" [rotate]="true"
+          [boundaryLinks]="true" (pageChange)="onPager($event)"></ngb-pagination>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="currentEvent" class="container-fluid shadow-sm p-0 mt-1" style="min-height: 500px;">
+    <app-table-attendee *ngIf="childComp==updateAttendees" [event]=currentEvent></app-table-attendee>
+    <app-statistics *ngIf="childComp==statistics" [event]=currentEvent></app-statistics>
+
+  </div>
+  
+</ng-template>
+<ng-template #musterComp>
+  <app-muster [event]=currentEvent (backMuster)=backMuster()></app-muster>
+</ng-template>

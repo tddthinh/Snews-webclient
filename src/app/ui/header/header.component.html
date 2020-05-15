@@ -1,0 +1,50 @@
+<div class="container-fluid p-0">
+    <div class="progress" style="height: 3px;">
+        <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 100%"
+            *ngIf="loadingService.isLoading()"></div>
+    </div>
+    <nav class="navbar navbar-expand-sm bg-light navbar-light shadow-sm py-0">
+
+        <a class="navbar-brand" href="#">
+            <img src="/assets/resources/img/snews.png" alt="Logo" style="width:120px;">
+        </a>
+        <div class="container-fluid p-0">
+            <button class="navbar-toggler navbar-toggler-right collapsed mx-auto border-0" (click)="isCollapsed = !isCollapsed"
+                [attr.aria-expanded]="!isCollapsed" aria-controls="navCollapse">
+                <i class="fa fa-chevron-circle-down"></i>
+            </button>
+            <div class="container">
+                <div id="navCollapse" [ngbCollapse]="isCollapsed">
+                    <div class="d-flex container-fluid p-0 mx-auto">
+                        <ul class="navbar-nav text-center">
+                            <li class="nav-item" [ngClass]="{'active': idNavItem === 'news'}" (click)="navItemClick(id='news')">
+                                <a class="nav-link" routerLink="/news">Tin tức</a>
+                            </li>
+                            <li *ngIf="currentUser" class="nav-item" [ngClass]="{'active': idNavItem === 'events'}"
+                                (click)="navItemClick(id='events')">
+                                <a class="nav-link" routerLink="/events">Điểm danh sự kiện</a>
+                            </li>
+                            <li *ngIf="currentUser" class="nav-item" [ngClass]="{'active': idNavItem === 'dashboard'}"
+                                (click)="navItemClick(id='dashboard')">
+                                <a class="nav-link" routerLink="/dashboard">Quản lý</a>
+                            </li>
+
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+            <ng-container *ngIf="currentUser;then logined;else notlogined"></ng-container>
+            <ng-template #notlogined>
+                <app-modal-login [btnClass]="'btn btn-sm btn-outline-primary float-right'"></app-modal-login>
+            </ng-template>
+            <ng-template #logined>
+                <span class="text-success text-center">
+                    <div class="container-fluid"><img src="/assets/resources/img/user.png" height=32 width=32></div>
+                    <div class="container-fluid"><b>{{currentUser.username}}</b></div>
+                </span>
+                <button class="btn btn-sm btn-outline-primary float-right" (click)="logout()">Đăng xuất</button>
+            </ng-template>
+        </div>
+    </nav>
+</div>
