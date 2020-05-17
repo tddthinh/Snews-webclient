@@ -29,3 +29,5 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 ## Demo
 https://snews-web.herokuapp.com/
 administrator/123456
+
+![screencapture-snews-web-herokuapp-2020-05-17-09_48_35](https://user-images.githubusercontent.com/65382297/82134616-f06b6b80-97e8-11ea-8735-498985e614b8.png)
